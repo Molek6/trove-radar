@@ -66,4 +66,4 @@ Optional settings: `PORT` (default 4021), `PRICE`, `LIQ_PRICE`, `REFRESH_MS` (sn
 
 ## Team
 
-[YOUR NAME], solo builder. [X or LinkedIn link]# trove-radar
+MAVERICK, solo builder. x.com/@olamhi006 # trove-radar
