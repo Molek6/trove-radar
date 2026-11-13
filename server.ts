@@ -51,6 +51,21 @@ async function liquidationsHandler(_req: express.Request, res: express.Response)
 }
 
 // Free routes
+app.get("/", (_req, res) => {
+  res.json({
+    name: "Trove Radar",
+    description: "x402-paid MUSD trove risk API for AI agents (Mezo testnet)",
+    network: NETWORK,
+    endpoints: {
+      "GET /health": "free, service status",
+      "GET /system": "free, BTC price, system ratio, lowest-ratio troves",
+      "GET /risk?address=0x...": `paid, ${PRICE} in MUSD via x402`,
+      "GET /liquidations": `paid, ${LIQ_PRICE} in MUSD via x402`,
+    },
+    source: "https://github.com/Molek6/trove-radar",
+  });
+});
+
 app.get("/health", (_req, res) => {
   res.json({ ok: true, service: "trove-radar", network: NETWORK });
 });
@@ -90,8 +105,9 @@ app.use(
 
 app.get("/risk", riskHandler);
 app.get("/liquidations", liquidationsHandler);
+
 startSnapshot();
 
 app.listen(PORT, () => {
-  console.log(`Trove Radar listening on http://localhost:${PORT}/`);
+  console.log(`Trove Radar listening on port ${PORT}`);
 });
