@@ -4,6 +4,8 @@
 
 Borrowers on Mezo can lose a position to liquidation or redemption, and nothing lets an AI agent or bot check that risk programmatically and pay per query. Trove Radar reads MUSD trove data live from the chain and sells it over HTTP, one request at a time, settled in MUSD through x402.
 
+**Live demo (Mezo testnet):** https://trove-radar.onrender.com/
+
 ## What it does
 
 - **Risk report per trove:** collateral ratio, liquidation price, how far BTC can fall before liquidation, and the trove's position in the redemption queue.
