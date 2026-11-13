@@ -5,6 +5,7 @@ import { HTTPFacilitatorClient } from "@x402/core/server";
 import { createPaywall } from "@x402/paywall";
 import { evmPaywall } from "@x402/paywall/evm";
 import { getSystem, getTroveRisk, getLiquidationCandidates, startSnapshot } from "./radar";
+import { HOME_HTML } from "./ui";
 
 const PORT = Number(process.env.PORT ?? 4021);
 const NETWORK = "eip155:31611"; // Mezo testnet
@@ -52,6 +53,10 @@ async function liquidationsHandler(_req: express.Request, res: express.Response)
 
 // Free routes
 app.get("/", (_req, res) => {
+  res.type("html").send(HOME_HTML);
+});
+
+app.get("/api", (_req, res) => {
   res.json({
     name: "Trove Radar",
     description: "x402-paid MUSD trove risk API for AI agents (Mezo testnet)",

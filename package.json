@@ -24,11 +24,7 @@
     "@types/node": "^20.0.0",
     "typescript": "^5.0.0"
   },
-  "pnpm": {
-    "overrides": {
-      "@x402/paywall": "^2.16.0",
-      "@x402/evm": "^2.16.0",
-      "@solana/kit": "6.9.0"
-    }
-  }
-}
+ overrides:
+  "@x402/paywall": "^2.16.0"
+  "@x402/evm": "^2.16.0"
+  "@solana/kit": "6.9.0"
